@@ -50,4 +50,6 @@ class DiceProbability:
         """
         1~6 주사위 값이 나타날 수 있는 확률을 화면에 출력
         """
-        pass
+        print(f'총 횟수: {self.n}')
+        for num in Dice.numbers():
+            print(f'주사위 {num}: {self.a[num]} 비율: {self.b[num]:>.3f}')
