@@ -11,6 +11,7 @@ class Dice:
 
 
 class DiceProbability:
+    n: int # 주사위를 던질 횟수
     a: typing.List[int] # N번의 주사위 숫자를 저장할 수 있는 배열
     b: typing.List[int] # 6개 주사위 숫자가 나오는 확률을 저장할 수 있는 배열
 
@@ -20,7 +21,9 @@ class DiceProbability:
 
         :param n: 주사위를 던질 횟수
         """
-        pass
+        self.n = n
+        self.a = [None] + [0] * 6 # a[i]: 눈금 i가 나온 횟수
+        self.b = [None] + [0] * 6 # b[i]: 눈금 i가 나오는 통계적 확률
 
     def calcProbability(self) -> None:
         """
