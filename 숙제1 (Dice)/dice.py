@@ -1,12 +1,13 @@
+import random
 import typing
 
 
 class Dice:
-    def roll() -> int:
+    def roll(self) -> int:
         """
         [1,6]범위의 정수를 무작위로 생성하여 반환한다.
         """
-        pass
+        return random.randint(1, 6)
 
 
 class DiceProbability:
