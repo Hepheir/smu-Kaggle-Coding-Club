@@ -3,6 +3,11 @@ import typing
 
 
 class Dice:
+    @classmethod
+    def numbers(cls) -> typing.Iterator[int]:
+        for i in range(1, 7):
+            yield i
+
     def roll(self) -> int:
         """
         [1,6]범위의 정수를 무작위로 생성하여 반환한다.
@@ -29,7 +34,17 @@ class DiceProbability:
         """
         각 번호별 확률을 계산해 배열 b에 저장
         """
-        pass
+        dice = Dice()
+
+        # 주사위를 N번 굴려 각 눈금이 나온 횟수를 저장
+        for _ in range(self.n):
+            num = dice.roll()
+            self.a[num] += 1
+
+        # 각 눈금이 나온 확률을 계산하여 저장
+        for num in Dice.numbers():
+            self.b[num] = self.a[num] / self.n
+
 
     def printProbability(self) -> None:
         """
