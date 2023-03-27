@@ -5,6 +5,9 @@ import typing
 class Dice:
     @classmethod
     def numbers(cls) -> typing.Iterator[int]:
+        """
+        주사위에서 나올 수 있는 숫자 생성기
+        """
         for i in range(1, 7):
             yield i
 
