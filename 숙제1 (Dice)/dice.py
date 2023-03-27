@@ -39,6 +39,11 @@ class DiceProbability:
         """
         dice = Dice()
 
+        # 초기화
+        for num in Dice.numbers():
+            self.a[num] = 0
+            self.b[num] = 0
+
         # 주사위를 N번 굴려 각 눈금이 나온 횟수를 저장
         for _ in range(self.n):
             num = dice.roll()
